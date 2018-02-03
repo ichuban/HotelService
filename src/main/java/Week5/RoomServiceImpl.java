@@ -18,35 +18,33 @@ public class RoomServiceImpl implements RoomService {
 
     public void listOfFreeRooms() {
         for (int i = 0; i < hotelAvi.roomList.size();i++){
-            if (hotelAvi.roomList.get(i).isRoomAvailability() == true){
+            if (hotelAvi.roomList.get(i).isRoomAvailability()){
                 System.out.println(hotelAvi.roomList.get(i));
             }
         }
         System.out.println("-------------------------");
     }
 
-    public boolean roomOrder() {
+    public void roomOrder() {
         roomNr = sc.nextInt();
         for (int i = 0;i<hotelAvi.roomList.size();i++){
             if (hotelAvi.roomList.get(i).getRoomNumber() == roomNr ){
-                if (hotelAvi.roomList.get(i).isRoomAvailability() == true){
+                if (hotelAvi.roomList.get(i).isRoomAvailability()){
                     hotelAvi.roomList.get(i).setRoomAvailability(false);
                 }
             }
         }
-        return false;
     }
 
-    public boolean roomMoveOut() {
+    public void roomMoveOut() {
     roomNr = sc.nextInt();
     for (int i = 0;i<hotelAvi.roomList.size();i++){
         if(hotelAvi.roomList.get(i).getRoomNumber() == roomNr){
-            if(hotelAvi.roomList.get(i).isRoomAvailability() == false){
+            if(!hotelAvi.roomList.get(i).isRoomAvailability()){
 hotelAvi.roomList.get(i).setRoomAvailability(true);
             }
         }
     }
-        return false;
     }
 public void startMenu(){
     System.out.println("---------------------------------------------------------------\n" +

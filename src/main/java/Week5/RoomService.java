@@ -4,7 +4,7 @@ public interface RoomService {
 
     void listOfRooms();
     void listOfFreeRooms();
-    boolean roomOrder();
-    boolean roomMoveOut();
+    void roomOrder();
+    void roomMoveOut();
     void startMenu();
 }
