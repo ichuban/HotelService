@@ -1,9 +1,12 @@
 package Week5;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class RoomServiceImpl implements RoomService {
-
+    protected static final Logger log = Logger.getLogger(RoomServiceImpl.class.getName());
     private int roomNr;
     private Hotel hotel = new Hotel();
     private Hotel hotelAvi = new Hotel();
@@ -22,11 +25,20 @@ public class RoomServiceImpl implements RoomService {
                 System.out.println(hotelAvi.roomList.get(i));
             }
         }
-        System.out.println("-------------------------");
+        System.out.println("----------------------");
     }
 
-    public void roomOrder() {
+    public boolean roomOrder(List<Guest> guestList) {
+
+        if (Guest.getDayOfBirth().isBefore(LocalDate.now().minusYears(18))) {
+            log.warning("Uzytkownik nie ma 18 lat");
+            return false;
+        }
+
         roomNr = sc.nextInt();
+
+
+
         for (int i = 0;i<hotelAvi.roomList.size();i++){
             if (hotelAvi.roomList.get(i).getRoomNumber() == roomNr ){
                 if (hotelAvi.roomList.get(i).isRoomAvailability()){
@@ -34,9 +46,14 @@ public class RoomServiceImpl implements RoomService {
                 }
             }
         }
+
+
+
+
+        return false;
     }
 
-    public void roomMoveOut() {
+    public boolean roomMoveOut() {
     roomNr = sc.nextInt();
     for (int i = 0;i<hotelAvi.roomList.size();i++){
         if(hotelAvi.roomList.get(i).getRoomNumber() == roomNr){
@@ -45,6 +62,7 @@ hotelAvi.roomList.get(i).setRoomAvailability(true);
             }
         }
     }
+        return false;
     }
 public void startMenu(){
     System.out.println("---------------------------------------------------------------\n" +

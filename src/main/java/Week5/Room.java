@@ -8,11 +8,14 @@ public class Room {
     private boolean roomAvailability;
 
 
+
+
+
     public Room(int roomNumber, int roomCap, boolean roomBath, boolean roomAvailability) {
         this.roomNumber = roomNumber;
         this.roomCap = roomCap;
-        this.roomBath = true;
-        this.roomAvailability = true;
+        this.roomBath = roomBath;
+        this.roomAvailability = roomAvailability;
 
 
     }

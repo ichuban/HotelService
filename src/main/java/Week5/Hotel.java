@@ -1,13 +1,15 @@
 package Week5;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hotel {
 
-    ArrayList<Room> roomList = new ArrayList<Room>();
+
+    List<Room> roomList = new ArrayList<>();
 
     Hotel() {
-        Room room1 = new Room(1, 5, true, true);
+        Room room1 = new Room(1,1,true,false);
         Room room2 = new Room(2, 1, true, false);
         Room room3 = new Room(3, 2, false, false);
         Room room4 = new Room(4, 2, true, true);
@@ -17,6 +19,7 @@ public class Hotel {
         Room room8 = new Room(8, 2, true, true);
         Room room9 = new Room(9, 6, true, true);
         Room room10 = new Room(10, 1, true, false);
+
 
 
         roomList.add(room1);
