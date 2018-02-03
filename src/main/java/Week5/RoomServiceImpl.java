@@ -7,7 +7,7 @@ public class RoomServiceImpl implements RoomService {
     private int roomNr;
     private Hotel hotel = new Hotel();
     private Hotel hotelAvi = new Hotel();
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public void listOfRooms() {
         for (int i = 0;i < hotel.roomList.size();i++){
