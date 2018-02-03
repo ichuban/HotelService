@@ -25,7 +25,7 @@ public class main {
 
         while (true){
             uS.startMenu();
-            System.out.print("  SELECTION:  ");
+            System.out.print("  WYBÓR:  ");
             x = scanner.next().charAt(0);
             switch (x){
                 case '1':
@@ -47,9 +47,10 @@ public class main {
                 case '5':
                     System.exit(0);
                     break;
-                default:
-                    System.out.println("No way!");
-                    break;
+                case '6':
+                    System.out.println(" POKOJE DO POSPTRZĄTANIA: ");
+                    uS.cleanRoomService();
+
             }
         }
     }

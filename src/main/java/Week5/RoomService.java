@@ -9,4 +9,6 @@ public interface RoomService {
     boolean roomOrder(List<Guest>guestList);
     boolean roomMoveOut();
     void startMenu();
+    void cleanRoomService();
+
 }

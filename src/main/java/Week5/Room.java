@@ -6,18 +6,35 @@ public class Room {
     private int roomCap;
     private boolean roomBath;
     private boolean roomAvailability;
+    private boolean isRoomClean;
+    private boolean isRoomDirty;
 
 
 
 
 
-    public Room(int roomNumber, int roomCap, boolean roomBath, boolean roomAvailability) {
+    public Room(int roomNumber, int roomCap, boolean roomBath, boolean roomAvailability,boolean isRoomClean) {
         this.roomNumber = roomNumber;
         this.roomCap = roomCap;
         this.roomBath = roomBath;
         this.roomAvailability = roomAvailability;
+        this.isRoomClean = isRoomClean;
+    }
 
+    public boolean isRoomClean() {
+        return isRoomClean;
+    }
 
+    public void setRoomClean(boolean roomClean) {
+        isRoomClean = roomClean;
+    }
+
+    public boolean isRoomDirty() {
+        return isRoomDirty;
+    }
+
+    public void setRoomDirty(boolean roomDirty) {
+        isRoomDirty = roomDirty;
     }
 
     public int getRoomNumber() {
@@ -54,14 +71,17 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "roomNumber=" + roomNumber +
-                ", roomCap=" + roomCap +
-                ", roomBath=" + roomBath +
-                ", roomAvailability=" + roomAvailability +
+        return "Hotel Grosik: {" +
+                "Numer Pokoju: " + roomNumber +
+                "  Na ile osób: " + roomCap +
+                "  Lazienka: " + roomBath +
+                "  Dostępność Pokoju: " + roomAvailability +
+                "  Pokoj Posprzątany: " + isRoomClean +
+
                 '}';
     }
 }
+
 
 
 
