@@ -10,5 +10,6 @@ public interface RoomService {
     boolean roomMoveOut();
     void startMenu();
     void cleanRoomService();
+    void moveOutDate();
 
 }

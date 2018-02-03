@@ -79,9 +79,11 @@ public class RoomServiceImpl implements RoomService {
                 "--------------------  2. Lista Dostępnych Pokoji  -------------\n" +
                 "--------------------  3. Zamów Pokoj  -------------------------\n" +
                 "--------------------  4. Zwolnij Pokój  -----------------------\n" +
-                "--------------------  5. Wyjscie  -----------------------------\n" +
-                "--------------------  6. Zleć posprzątanie pokoji  ------------\n" +
+                "--------------------  5. Zleć posprzątanie pokoji  ------------\n" +
+                "--------------------  6. Wyswietl liste zajetych pokoji  ------\n" +
+                "--------------------  7. Wyjscie  -----------------------------\n" +
                 "---------------------------------------------------------------");
+
     }
 
     public void cleanRoomService() {
@@ -101,5 +103,13 @@ public class RoomServiceImpl implements RoomService {
 
 
     }
+    public void moveOutDate() {
+                for (int i = 0; i < hotelAvi.roomList.size(); i++) {
+                    if (!hotelAvi.roomList.get(i).isRoomAvailability()) {
+                        System.out.println(hotelAvi.roomList.get(i));
 
+            }
+        }
+        roomNr = sc.nextInt();
+    }
 }

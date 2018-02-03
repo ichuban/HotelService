@@ -45,11 +45,14 @@ public class main {
                     uS.roomMoveOut();
                     break;
                 case '5':
-                    System.exit(0);
-                    break;
-                case '6':
                     System.out.println(" POKOJE DO POSPTRZĄTANIA: ");
                     uS.cleanRoomService();
+                case '6':
+                    System.out.println(" LISTA ZAJETYCH POKOJI");
+                    uS.moveOutDate();
+                case '7':
+                    System.exit(0);
+                    break;
 
             }
         }
